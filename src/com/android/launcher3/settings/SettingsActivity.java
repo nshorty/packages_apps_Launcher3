@@ -76,7 +76,6 @@ public class SettingsActivity extends FragmentActivity
     public static final String SAVE_HIGHLIGHTED_KEY = "android:preference_highlighted";
 
     public static boolean restartNeeded = false;
-    public static final String KEY_MINUS_ONE = "pref_enable_minus_one";
     public static final String KEY_TRUST_APPS = "pref_trust_apps";
 
     @Override
@@ -237,16 +236,15 @@ public class SettingsActivity extends FragmentActivity
                     updateIsGoogleAppEnabled();
                     return true;
 
-                case KEY_MINUS_ONE:
-                    return LauncherAppState.getInstanceNoCreate().isSearchAppAvailable();
-
                 case KEY_TRUST_APPS:
                     preference.setOnPreferenceClickListener(p -> {
-                        Intent intent = new Intent(getActivity(), TrustAppsActivity.class);
-                        startActivity(intent);
+                        Utilities.showLockScreen(getActivity(),
+                                getString(R.string.trust_apps_manager_name), () -> {
+                            Intent intent = new Intent(getActivity(), TrustAppsActivity.class);
+                            startActivity(intent);
+                        });
                         return true;
                     });
-                    return true;
             }
 
             return true;
