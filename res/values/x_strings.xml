@@ -55,4 +55,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <!-- Suggestions -->
     <string name="suggestion_pref_screen_title">Suggestions</string>
     <string name="suggestion_pref_screen_desc">For All Apps &amp; Home screen suggestions</string>
+    
+    <!-- Titles -->
+    <string name="icons_title">Icons</string>
+    <string name="hidden_apps_title">Hidden Apps</string>
+    <string name="gestures_title">Launcher Gestures</string>
+    <string name="google_app_title">Google Implementation</string>
 </resources>
